@@ -1,16 +1,24 @@
 # to_do_list_app
 
-A new Flutter project.
+Bu uygulama, Flutter Draggable Widget'ını kullanabilmek için geliştirdiğim bir to-do list uygulamasıdır.
+Bitirilen task'ları to-do'dan done'a sürükleyebilmeyi amaçlar.
+Aynı zamanda task'ların düzenlenebilmesi ve silinebilmesi gibi özellikler sağlar.
 
-## Getting Started
+1. **Kurulum**
+   
+   Projeyi klonlayın ve gerekli paketleri yükleyin:
+   ```bash
+   git clone https://github.com/melikeyogurtcu/Flutter-Draggable.git  
+2. **Gerekli paketleri yükleyin:**
 
-This project is a starting point for a Flutter application.
+    ```bash
+   flutter pub get
 
-A few resources to get you started if this is your first Flutter project:
+## Görseller
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| ![home_page](images/home_page.png) | ![task_done](images/task_done.png) | ![congrats_alertdialog](images/congrats_alertdialog.png) |
+|----------------------------------|---------------------------------|-------------------------------|
+| ![task_details](images/task_details.png)     | ![edit_task](images/edit_task.png) |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+

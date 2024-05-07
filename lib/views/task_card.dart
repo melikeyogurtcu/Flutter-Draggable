@@ -27,6 +27,31 @@ class _TaskCardState extends State<TaskCard> {
   @override
   Widget build(BuildContext context) {
     return Draggable(
+      onDragCompleted: () => {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Congratulations! 🥳'),
+              content: const Text('You have completed your task!'),
+              actions: <Widget>[
+                TextButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(const Color.fromARGB(255, 241, 234, 181)),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('OK',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold)),
+                ),
+              ],
+            );
+          },
+        ),
+      },
       data: widget.task,
       feedback: SizedBox(
         width: 200,
@@ -146,7 +171,7 @@ class _TaskCardState extends State<TaskCard> {
                                               style: ButtonStyle(
                                                 backgroundColor:
                                                     MaterialStateProperty.all(
-                                                        Colors.yellow.shade200),
+                                                        const Color.fromARGB(255, 241, 234, 181)),
                                               ),
                                               child: const Text('Update',
                                                   style: TextStyle(
@@ -168,7 +193,7 @@ class _TaskCardState extends State<TaskCard> {
                                 },
                                 style: ButtonStyle(
                                   backgroundColor: MaterialStateProperty.all(
-                                      Colors.yellow.shade200),
+                                      const Color.fromARGB(255, 241, 234, 181)),
                                 ),
                                 icon:
                                     const Icon(Icons.edit, color: Colors.black),
@@ -187,7 +212,7 @@ class _TaskCardState extends State<TaskCard> {
                                 },
                                 style: ButtonStyle(
                                   backgroundColor: MaterialStateProperty.all(
-                                      Colors.yellow.shade200),
+                                      const Color.fromARGB(255, 241, 234, 181)),
                                 ),
                                 icon: const Icon(Icons.delete,
                                     color: Colors.black),
@@ -200,58 +225,6 @@ class _TaskCardState extends State<TaskCard> {
                       ],
                     ),
                   );
-                  // return AlertDialog(
-                  //   title: const Row(
-                  //     children: [
-                  //       Icon(Icons.edit),
-                  //       SizedBox(width: 5),
-                  //       Text('Edit Task',
-                  //           style: TextStyle(
-                  //               color: Colors.black,
-                  //               fontWeight: FontWeight.bold)),
-                  //       SizedBox(width: 5),
-                  //       Icon(Icons.edit),
-                  //     ],
-                  //   ),
-                  //   content: Expanded(
-                  //     child: Column(
-                  //       children: <Widget>[
-                  //         TextField(
-                  //           controller: _titleController,
-                  //           decoration:
-                  //               const InputDecoration(hintText: "Task Title"),
-                  //         ),
-                  //         Expanded(
-                  //           child: TextField(
-                  //             maxLines: 39,
-                  //             controller: _descriptionController,
-                  //             decoration: const InputDecoration(
-                  //                 hintText: "Task Description"),
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  //   actions: <Widget>[
-                  //     TextButton(
-                  //       style: ButtonStyle(
-                  //         backgroundColor:
-                  //             MaterialStateProperty.all(Colors.yellow.shade200),
-                  //       ),
-                  //       child: const Text('Update',
-                  //           style: TextStyle(color: Colors.black)),
-                  //       onPressed: () {
-                  //         TaskController.updateTask(
-                  //           widget.task,
-                  //           _titleController.text,
-                  //           _descriptionController.text,
-                  //         );
-                  //         setState(() {});
-                  //         Navigator.of(context).pop();
-                  //       },
-                  //     ),
-                  //   ],
-                  // );
                 },
               );
             },

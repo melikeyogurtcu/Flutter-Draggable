@@ -6,10 +6,6 @@ class TaskController {
     task.title = newTitle;
     task.description = newDescription;
 
-    
-
-    // TODO: Here you should add the code to update the task in your database or memory.
-    // This depends on how you are storing your tasks.
   }
   static void deleteTask(Task task) {
    
