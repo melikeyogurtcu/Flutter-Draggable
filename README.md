@@ -1,7 +1,9 @@
 # to_do_list_app
 
 Bu uygulama, Flutter Draggable Widget'ını kullanabilmek için geliştirdiğim bir to-do list uygulamasıdır.
+
 Bitirilen task'ları to-do'dan done'a sürükleyebilmeyi amaçlar.
+
 Aynı zamanda task'ların düzenlenebilmesi ve silinebilmesi gibi özellikler sağlar.
 
 1. **Kurulum**
@@ -20,5 +22,7 @@ Aynı zamanda task'ların düzenlenebilmesi ve silinebilmesi gibi özellikler sa
 |----------------------------------|---------------------------------|-------------------------------|
 | ![task_details](images/task_details.png)     | ![edit_task](images/edit_task.png) |
 
+## Test Etme
 
+<img src="images/to-do-list.gif" alt="Draggable GIF">
 
