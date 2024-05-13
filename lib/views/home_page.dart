@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list_app/models/task.dart';
-import 'package:to_do_list_app/views/task_card.dart';
+import 'package:to_do_list_app/views/task_cards/task_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,9 +18,6 @@ class _HomePageState extends State<HomePage> {
       tasks.add(Task(title: 'New Task', description: 'New Description'));
     });
   }
-
- 
-
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +58,13 @@ class _HomePageState extends State<HomePage> {
                     child: ListView.builder(
                       itemCount: tasks.length,
                       itemBuilder: (context, index) {
-                        return TaskCard(task: tasks[index], onDelete: () {
-                          setState(() {
-                            tasks.remove(tasks[index]);
-                          });
-                        });
+                        return TaskCard(
+                            task: tasks[index],
+                            onDelete: () {
+                              setState(() {
+                                tasks.remove(tasks[index]);
+                              });
+                            });
                       },
                     ),
                   ),
@@ -93,11 +92,13 @@ class _HomePageState extends State<HomePage> {
                           child: ListView.builder(
                             itemCount: doneTasks.length,
                             itemBuilder: (context, index) {
-                              return TaskCard(task: doneTasks[index], onDelete: () {
-                                setState(() {
-                                  doneTasks.remove(doneTasks[index]);
-                                });
-                              });
+                              return TaskCard(
+                                  task: doneTasks[index],
+                                  onDelete: () {
+                                    setState(() {
+                                      doneTasks.remove(doneTasks[index]);
+                                    });
+                                  });
                             },
                           ),
                         ),
@@ -137,7 +138,6 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      
     );
   }
 }
