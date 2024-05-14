@@ -74,7 +74,8 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             child: DragTarget<Task>(
-              builder: (context, candidateData, rejectedData) {
+              builder:
+                  (context, List<dynamic> accepted, List<dynamic> rejected) {
                 return Container(
                     color: const Color.fromARGB(255, 169, 242, 207),
                     child: Column(
